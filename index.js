@@ -3,7 +3,7 @@ const { ShardingManager, ShardEvents } = require("discord.js");
 const { logger } = require("./functions/logger")
 
 if (config.sharding) {
-    const manager = new ShardingManager("./structures/client.js", { token: config.client_token, totalShards: "auto" });
+    const manager = new ShardingManager("./client.js", { token: config.client_token, totalShards: "auto" });
 
     manager.on("shardCreate", shard => {
         logger(`Launched shard ${shard.id}`, "info")
